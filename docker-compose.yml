@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  alpine-nginx-php-hobo:
+    image: REGISTRY_BASE_URL/alpine-nginx-php:latest
+    hostname: 'hobo'
+    environment:
+      - "domainname=idocker.REALM_DOMAIN_SUFFIX"
+    labels:
+      - "traefik.port=80"
+      - "traefik.frontend.rule=Host:hobo.REALM_DOMAIN_SUFFIX"
+      - "traefik.protocol=http"
+    env_file:
+      - ./UUID.env
+    volumes:
+      - ./UUID.gn:/goldnugget/UUID.gn
+
+      
