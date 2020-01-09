@@ -1,6 +1,6 @@
 # Alpine NGINX-PHP7 Web Server
 ## Introduction
-This is the alpine nginx+php7 web server image of the Hacking-Lab CTF system
+This is the template alpine nginx+php7 web server image of the Hacking-Lab CTF system
 
 ## Base
 * hackinglab/alpine-base:latest
@@ -13,9 +13,14 @@ This is the alpine nginx+php7 web server image of the Hacking-Lab CTF system
 * with `file` based dynamic ctf flag handling
 * serving files by nginx+php7 in /opt/www
 
-## Testing
+## Build & Test
 1. `bash build.sh`
 2. `docker-compse -f docker-compose-local.yml up`
-3. browser localhost:8000
+3. browse to http://localhost:8000/
+
+## Testing only (without building)
+1. `docker pull hackinglab/alpine-nginx-php:latest`
+2. `docker-compose -f docker-compose-local.yml up`
+3. browse to http://localhost:8000/
 
 
