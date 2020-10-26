@@ -1,7 +1,7 @@
-version: '2'
+version: '3.6'
 
 services:
-  nginx-php:
+  alpine-nginx-php:
     build: .
     image: hackinglab/alpine-nginx-php:3.2
     environment:
@@ -9,7 +9,7 @@ services:
     - USERNAME=hracker
     labels:
       - "traefik.port=80"
-      - "traefik.frontend.rule=Host:ttyd.idocker.hacking-lab.com"
+      - "traefik.frontend.rule=Host:alpine-nginx-php.idocker.hacking-lab.com"
       - "traefik.protocol=http"
 
 

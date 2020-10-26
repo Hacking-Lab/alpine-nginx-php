@@ -1,7 +1,7 @@
-version: '2'
+version: '3.6'
 
 services:
-  nginx-php:
+  alpine-nginx-php:
     build: .
     image: hackinglab/alpine-nginx-php:3.2
     environment:
