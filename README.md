@@ -14,9 +14,13 @@ This is the template alpine nginx+php7 web server image of the Hacking-Lab CTF s
 * serving files by nginx+php7 in /opt/www
 
 ## Build & Test
-1. `bash build.sh`
-2. `docker-compose up`
-3. browse to http://localhost:8000/
+`docker-compose up`
+
+or 
+
+`bash build.sh`
+
+browse to http://localhost:8000/
 
 ## Testing only (without building)
 1. `docker pull hackinglab/alpine-nginx-php:latest`
