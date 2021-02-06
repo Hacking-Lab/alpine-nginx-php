@@ -15,7 +15,7 @@ This is the template alpine nginx+php7 web server image of the Hacking-Lab CTF s
 
 ## Build & Test
 1. `bash build.sh`
-2. `docker-compose -f docker-compose-local.yml up`
+2. `docker-compose up`
 3. browse to http://localhost:8000/
 
 ## Testing only (without building)
