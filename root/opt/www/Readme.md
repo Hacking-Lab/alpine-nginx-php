@@ -18,7 +18,6 @@ This content ist provided by a `docker service` based on Alpine Linux nginx web 
 
 ## PHP Support
 * enabled
-* please try <a href="info.php" target="_blank">info.php</a> in `/opt/www/info.php`
 
 ## NGINX configuration
 * /config/nginx/nginx.conf
