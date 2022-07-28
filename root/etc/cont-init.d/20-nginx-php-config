@@ -25,15 +25,15 @@ mkdir -p \
 
 # fix timezone in php.ini
 echo "sed for php.ini"
-sed -i "s#;date.timezone =.*#date.timezone = $TZ#g" /etc/php7/php.ini
+sed -i "s#;date.timezone =.*#date.timezone = $TZ#g" /etc/php8/php.ini
 
 #fix php-fpm log location
-sed -i "s#;error_log = log/php7/error.log.*#error_log = /config/log/php/error.log#g" /etc/php7/php-fpm.conf
-sed -i "s#;log_level = notice#log_level = debug#g" /etc/php7/php-fpm.conf
+sed -i "s#;error_log = log/php8/error.log.*#error_log = /config/log/php/error.log#g" /etc/php8/php-fpm.conf
+sed -i "s#;log_level = notice#log_level = debug#g" /etc/php8/php-fpm.conf
 
 #fix php-fpm user
-sed -i "s#user = nobody.*#user = $HL_USER_USERNAME#g" /etc/php7/php-fpm.d/www.conf
-sed -i "s#group = nobody.*#group = $HL_USER_USERNAME#g" /etc/php7/php-fpm.d/www.conf
+sed -i "s#user = nobody.*#user = $HL_USER_USERNAME#g" /etc/php8/php-fpm.d/www.conf
+sed -i "s#group = nobody.*#group = $HL_USER_USERNAME#g" /etc/php8/php-fpm.d/www.conf
 
 
 # permissions

@@ -1,4 +1,4 @@
-# Alpine Linux NGINX-PHP7 Web Server
+# Alpine Linux NGINX-PHP8 Web Server
 ## Introduction
 This content ist provided by a `docker service` based on Alpine Linux nginx web server from the Hacking-Lab CTF system. 
 
@@ -22,9 +22,9 @@ This content ist provided by a `docker service` based on Alpine Linux nginx web 
 ## NGINX configuration
 * /config/nginx/nginx.conf
 
-## PHP7 configuration
-* /etc/php7/php-fpm.conf
-* /etc/php7/php.ini
+## PHP8 configuration
+* /etc/php8/php-fpm.conf
+* /etc/php8/php.ini
 * /config/www/config.php
 
 
