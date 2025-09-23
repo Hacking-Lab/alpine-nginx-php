@@ -2,7 +2,7 @@
 
 source /etc/hluser
 
-# make our folders
+# make our folders
 echo "================== make /config =========="
 mkdir -p \
 	/config/{nginx/site-confs,www,log/nginx,keys,log/php} \
@@ -10,33 +10,19 @@ mkdir -p \
 	/var/lib/nginx/tmp/client_body \
 	/var/tmp/nginx
 
-# copy config files
+# copy config files
 [[ ! -f /config/nginx/nginx.conf ]] && \
 	echo "copy /defaults/nginx.conf to /config/nginx/nginx.conf"
 	cp /defaults/nginx.conf /config/nginx/nginx.conf
 	ls -al /config/nginx/
-	sed -i -e "s/HL_USER_USERNAME/$HL_USER_USERNAME/g" /config/nginx/nginx.conf
-
+        sed -i -e "s/HL_USER_USERNAME/$HL_USER_USERNAME/g" /config/nginx/nginx.conf
 [[ ! -f /config/nginx/site-confs/default ]] && \
 	echo "copy /defaults/default to /config/nginx/site-confs/default"
 	cp /defaults/default /config/nginx/site-confs/default
 	ls -al /config/nginx/site-confs/
-	sed -i -e "s/HL_USER_USERNAME/$HL_USER_USERNAME/g" /config/nginx/nginx.conf
+        sed -i -e "s/HL_USER_USERNAME/$HL_USER_USERNAME/g" /config/nginx/nginx.conf
 
-# fix timezone in php.ini
-echo "sed for php.ini"
-sed -i "s#;date.timezone =.*#date.timezone = $TZ#g" /etc/php8/php.ini
-
-#fix php-fpm log location
-sed -i "s#;error_log = log/php8/error.log.*#error_log = /config/log/php/error.log#g" /etc/php8/php-fpm.conf
-sed -i "s#;log_level = notice#log_level = debug#g" /etc/php8/php-fpm.conf
-
-#fix php-fpm user
-sed -i "s#user = nobody.*#user = $HL_USER_USERNAME#g" /etc/php8/php-fpm.d/www.conf
-sed -i "s#group = nobody.*#group = $HL_USER_USERNAME#g" /etc/php8/php-fpm.d/www.conf
-
-
-# permissions
+# permissions
 chown -R $HL_USER_USERNAME:$HL_USER_USERNAME \
 	/config \
 	/run \
@@ -46,4 +32,5 @@ chmod -R g+w \
 	/config/{nginx,www}
 chmod -R 644 /etc/logrotate.d
 
-
+# permissions /opt/www
+chown -R $HL_USER_USERNAME:$HL_USER_USERNAME /opt/www
