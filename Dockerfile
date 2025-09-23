@@ -12,6 +12,8 @@ RUN apk add --no-cache --update nginx \
         openssl \
         shadow \
         php83-common \
+        php83-cli \
+        php83-phar \
         php83 \
         php83-fileinfo \
         php83-fpm \
